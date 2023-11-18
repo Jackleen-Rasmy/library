@@ -41,7 +41,7 @@ class Author(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=255,blank=True,null=True)
     author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='author_book')
-    publication_date = models.DateTimeField(default=timezone.now)
+    publication_date = models.DateField(default=timezone.now)
     price = models.DecimalField(max_digits=6, decimal_places=2,blank=True,null=True)
     
     def __str__(self):
